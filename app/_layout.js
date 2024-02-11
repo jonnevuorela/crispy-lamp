@@ -6,17 +6,22 @@ import * as SplashScreen from "expo-splash-screen";
 SplashScreen.preventAutoHideAsync();
 
 const Layout = () => {
-    const [fontsLoaded] = useFonts({
+    const [fontsLoaded, error] = useFonts({
         DMBold: require("../assets/fonts/DMSans-Bold.ttf"),
         DMMedium: require("../assets/fonts/DMSans-Medium.ttf"),
         DMRegular: require("../assets/fonts/DMSans-Regular.ttf")
-    })
+    });
+
+    if (error) {
+        console.error("Font loading error in Layout:", error);
+        return null; // or handle the error appropriately
+    }
 
     const onLayoutRootView = useCallback(async ()=> {
 
         console.log("Fonts loaded:", fontsLoaded);
 
-        
+
         if(fontsLoaded) {
             await SplashScreen.hideAsync();
         }
