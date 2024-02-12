@@ -9,6 +9,9 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/config": "^8.5.4",
+    "@expo/metro-config": "^0.17.4",
+    "@react-navigation/stack": "^6.3.21",
     "axios": "^1.6.7",
     "expo": "^50.0.6",
     "expo-constants": "~15.4.5",
