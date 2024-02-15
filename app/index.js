@@ -2,7 +2,6 @@ import React from "react"
 import {useState}   from "react";
 import { View, ScrollView, SafeAreaView} from "react-native";
 import {Stack, useRouter} from "expo-router";
-import Geolocation from '@react-native-community/geolocation';
 import { useEffect } from 'react';
 
 import {COLORS, icons, images, SIZES} from "../constants";
