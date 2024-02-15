@@ -21,8 +21,8 @@ const Welcome = () => {
   return (
     <View>
       <View style={styles.container}>
-        <Text style={styles.userName}>Hello Jonne!</Text>
-        <Text style={styles.welcomeMessage}>Find yout perfect job!</Text>
+        <Text style={styles.userName}>Hei Jonne!</Text>
+        <Text style={styles.welcomeMessage}>Löydä itsellesi työ!</Text>
       </View>
 
       <View style={styles.searchContainer}>
@@ -31,7 +31,7 @@ const Welcome = () => {
             style={styles.searchInput}
             value=""
             onChange={()=>{}}
-            placeholder="What are you looking for?"
+            placeholder="Mitä Etsit?"
             />
         </View>
         <Pressable style={styles.searchBtn} onPress={()=>{}}>

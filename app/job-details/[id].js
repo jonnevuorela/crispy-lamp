@@ -13,7 +13,7 @@ import {Company, JobAbout, JobFooter, JobTabs, ScreenHeaderBtn, Specifics} from 
 import {COLORS, icons, SIZES} from "../../constants";
 import useFetch from "../../hook/useFetch";
 
-const tabs = ["About", "Qualifications", "Resposibilities"];
+const tabs = ["Lisätiedot", "Vaatimukset", "Vastuuosuudet"];
 
 
 const JobDetails=()=>{
@@ -22,13 +22,43 @@ const JobDetails=()=>{
     const params = useGlobalSearchParams();
 
     const {data, isLoading, error, refetch} = useFetch("job-details", {
-        job_id:params.id
+        job_id:params.id,
     })
 
     const [refreshing, setRefreshing] = useState(false);
     const [activeTab, setActiveTab] = useState(tabs[0]);
 
-    const onRefresh = ()=>{}
+    const handleSetActiveTab = (tab) => {
+        console.log('Setting activeTab to:', tab);
+        setActiveTab(tab);
+    };
+
+    const onRefresh = ()=>{};
+
+    const displayTabContent = ()=>{
+        switch (activeTab) {
+            case "Vaatimukset":
+                return (
+                <Specifics 
+                title="Vaatimukset"
+                points={data[0].job_highlights?.Qualifications ?? ["N/A"]}
+                />
+                );
+            case "Lisätiedot":
+                return <JobAbout 
+                info={data[0].job_description ?? "Ei lisätietoja."}
+                />
+            case "Vastuuosuudet":
+                return (
+                    <Specifics 
+                title="Vastuuosuudet"
+                points={data[0].job_highlights?.Responsibilities ?? ["N/A"]}
+                />
+                )
+            default:
+                break;
+        }
+    };
 
 
     return (
@@ -56,8 +86,9 @@ const JobDetails=()=>{
                 }}
             />
             <>
-                <ScrollView showsVerticalScrollIndicator={false} refreshControl=
-                {<RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>}>
+                <ScrollView 
+                showsVerticalScrollIndicator={false}
+                refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>}>
                     {isLoading ? (
                         <ActivityIndicator size="large" color ={COLORS.primary} />
                     ): error ? (
@@ -65,7 +96,7 @@ const JobDetails=()=>{
                     ) : data.length ===0 ? (
                         <Text>No data</Text>
                     ) : (
-                        <View stylre={{padding: SIZES.medium, paddingBottom: 100}}>
+                        <View style={{padding: SIZES.medium, paddingBottom: 100}}>
                             <Company
                                 companyLogo={data[0].employer_logo}
                                 jobTitle={data[0].job_title}
@@ -76,17 +107,22 @@ const JobDetails=()=>{
 
                             <JobTabs
                                 tabs={tabs}
-                                active={activeTab}
+                                activeTab={activeTab}
                                 setActiveTab={setActiveTab}
 
                             />
+
+                            {displayTabContent()}
+
                         </View>
                     
                     )}
                 </ScrollView>
+
+                <JobFooter url={data[0]?.job_google_link ?? "https://careers.google.com/jobs/results"} />
             </>
         </SafeAreaView>
     )
 }
 
-export default JobDetails
+export default JobDetails;

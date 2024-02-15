@@ -20,7 +20,7 @@ const NearbyJobs = () => {
     <View style={styles.container}>
 
       <View style ={styles.header}>
-        <Text style={styles.headerTitle}>Nearby jobs</Text>
+        <Text style={styles.headerTitle}>Lähellä olevat työt</Text>
 
         <Pressable>
           <Text style={styles.headerBtn}>Show all</Text>
