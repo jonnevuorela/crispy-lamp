@@ -28,10 +28,10 @@ const JobDetails=()=>{
     const [refreshing, setRefreshing] = useState(false);
     const [activeTab, setActiveTab] = useState(tabs[0]);
 
-    const handleSetActiveTab = (tab) => {
+    /*const handleSetActiveTab = (tab) => {
         console.log('Setting activeTab to:', tab);
         setActiveTab(tab);
-    };
+    };*/
 
     const onRefresh = ()=>{};
 
