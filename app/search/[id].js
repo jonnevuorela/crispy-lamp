@@ -17,6 +17,11 @@ const JobSearch = () => {
     const [searchError, setSearchError] = useState(null);
     const [page, setPage] = useState(1);
 
+    const searchTranslate = {
+        'Full-time': 'Kokoaikainen',
+        'Part-time': 'Osa-aikainen',
+        'Contractor': 'Urakka',};
+
     const handleSearch = async () => {
         setSearchLoader(true);
         setSearchResult([])
@@ -89,7 +94,7 @@ const JobSearch = () => {
                 ListHeaderComponent={() => (
                     <>
                         <View style={styles.container}>
-                            <Text style={styles.searchTitle}>{params.id}</Text>
+                            <Text style={styles.searchTitle}>{searchTranslate[params.id]||params.id}</Text>
                             <Text style={styles.noOfSearchedJobs}>Työ mahdollisuudet </Text>
                         </View>
                         <View style={styles.loaderContainer}>

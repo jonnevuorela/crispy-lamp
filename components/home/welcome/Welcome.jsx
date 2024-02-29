@@ -14,6 +14,12 @@ import {icons, SIZES} from "../../../constants";
 
 const jobTypes = ['Full-time','Part-time','Contractor'];
 
+const translations = {
+  'Full-time': 'Kokoaikainen',
+  'Part-time': 'Osa-aikainen',
+  'Contractor': 'Urakka',
+};
+
 const Welcome = ({searchTerm,setSearchTerm, handleClick}) => {
   const router = useRouter();
   const [activeJobType, setActiveJobType] = useState('Full-time')
@@ -30,7 +36,7 @@ const Welcome = ({searchTerm,setSearchTerm, handleClick}) => {
           <TextInput
             style={styles.searchInput}
             value={searchTerm}
-            onChange={(text)=>setSearchTerm(text)}
+            onChangeText={(text)=>setSearchTerm(text)}
             placeholder="Mitä Etsit?"
             />
         </View>
@@ -54,7 +60,7 @@ const Welcome = ({searchTerm,setSearchTerm, handleClick}) => {
                 router.push(`/search/${item}`)
               }}
               >
-              <Text style={styles.tabText(activeJobType, item)}>{item}</Text>
+              <Text style={styles.tabText(activeJobType, item)}>{translations[item]}</Text>
             </Pressable>
           )}
           keyExtractor={item => item}
