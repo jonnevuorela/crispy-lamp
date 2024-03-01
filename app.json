@@ -7,7 +7,22 @@
     "plugins": [
       "expo-router"
     ],
-    "name": "react_native_jobs",
-    "slug": "react_native_jobs"
+    "name": "jabs",
+    "slug": "jabs",
+    "extra": {
+      "eas": {
+        "projectId": "eb71561b-7442-4d6a-8ea4-11e6bb2dd9bf",
+        "owner": "jonnev"
+      }
+    },
+    "owner": "jonnev",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/eb71561b-7442-4d6a-8ea4-11e6bb2dd9bf"
+    },
+    "android": {},
+    "ios": {}
   }
 }
