@@ -7,6 +7,10 @@ import styles from './popularjobs.style'
 import {COLORS,SIZES} from "../../../constants";
 import PopularJobCard from "../../common/cards/popular/PopularJobCard";
 import useFetch from "../../../hook/useFetch";
+import Welcome from '../welcome/Welcome';
+
+
+
 
 const Popularjobs = () => {
     const router = useRouter();
@@ -18,7 +22,7 @@ const Popularjobs = () => {
       page: '1',
     });
 
-  const [selectedJob, setSelectedJob] = useState();
+  const [selectedJob, setSelectedJob,] = useState();
 
   const handleCardPress = (item) => {
     router.push(`/job-details/${item.job_id}`);
@@ -30,16 +34,18 @@ const Popularjobs = () => {
     }, 1000);
   };
 
+
   return (
     <View style={styles.container}>
 
       <View style ={styles.header}>
         <Text style={styles.headerTitle}>Suositut työt</Text>
 
-        <Pressable>
-          <Text style={styles.headerBtn}>Näytä kaikki</Text>
+        <Pressable               
+        onPress={()=>{router.push(`/search/${'Finland'}`)}}>
+        <Text style={styles.headerBtn}
+        >Näytä kaikki</Text>
         </Pressable>
-
       </View>
 
       <View style={styles.cardsContainer}>

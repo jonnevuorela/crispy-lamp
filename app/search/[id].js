@@ -18,10 +18,11 @@ const JobSearch = () => {
     const [page, setPage] = useState(1);
 
     const searchTranslate = {
+        'Finland': 'Suositut työt',
         'Full-time': 'Kokoaikainen',
         'Part-time': 'Osa-aikainen',
         'Contractor': 'Urakka',};
-
+        
     const handleSearch = async () => {
         setSearchLoader(true);
         setSearchResult([])

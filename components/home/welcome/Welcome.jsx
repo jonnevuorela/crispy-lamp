@@ -24,11 +24,15 @@ const Welcome = ({searchTerm,setSearchTerm, handleClick}) => {
   const router = useRouter();
   const [activeJobType, setActiveJobType] = useState('Full-time')
 
+
+
+
   return (
     <View>
       <View style={styles.container}>
         <Text style={styles.userName}>Hei!</Text>
         <Text style={styles.welcomeMessage}>Löydä itsellesi työ!</Text>
+
       </View>
 
       <View style={styles.searchContainer}>

@@ -39,11 +39,12 @@ const Home = () => {
                         setSearchTerm={setSearchTerm}
                         handleClick={() => {
                             if(searchTerm){
-                                router.push(`/search/${searchTerm}`)
+                                router.push(`/search/${searchTerm}`);
+                                setSearchTerm('');
                             }
                         }}
                     />
-                    <Popularjobs />
+                    <Popularjobs setSearchTerm={setSearchTerm}/>
                     <Nearbyjobs />
                 </View>
             </ScrollView>

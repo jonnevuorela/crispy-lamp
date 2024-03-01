@@ -22,8 +22,10 @@ const NearbyJobs = () => {
       <View style ={styles.header}>
         <Text style={styles.headerTitle}>Lähellä olevat työt</Text>
 
-        <Pressable>
-          <Text style={styles.headerBtn}>Show all</Text>
+        <Pressable               
+        onPress={()=>{router.push(`/search/${'Rovaniemi'}`)}}>
+        <Text style={styles.headerBtn}
+        >Näytä kaikki</Text>
         </Pressable>
 
       </View>
