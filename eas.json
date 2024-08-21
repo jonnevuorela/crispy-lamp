@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "cli": {
     "version": ">= 10.2.4"
   },
@@ -15,4 +16,19 @@
   "submit": {
     "production": {}
   }
+=======
+"build": {
+    "development": {
+        "developmentClient": true,
+        "distribution": "internal"
+    },
+    "preview": {
+        "distribution": "internal",
+        "channel": "preview"
+    },
+    "production": {
+        "channel": "production"
+    }
+    }
+>>>>>>> e5c36da87a21c77af28e0b725aa20e1f854f8bf0
 }

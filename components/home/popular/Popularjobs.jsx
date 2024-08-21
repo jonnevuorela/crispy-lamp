@@ -7,34 +7,52 @@ import styles from './popularjobs.style'
 import {COLORS,SIZES} from "../../../constants";
 import PopularJobCard from "../../common/cards/popular/PopularJobCard";
 import useFetch from "../../../hook/useFetch";
+import Welcome from '../welcome/Welcome';
+
+
+
 
 const Popularjobs = () => {
     const router = useRouter();
 
     const {data,isLoading,error}=useFetch
     ("search",{
-      query: "Software developer in Finland",
-      num_pages:1
-    })
-    console.log(data);
+      query: 'Finland',
+      num_pages: '1',
+      page: '1',
+    });
+
+  const [selectedJob, setSelectedJob,] = useState();
+
+  const handleCardPress = (item) => {
+    router.push(`/job-details/${item.job_id}`);
+    setSelectedJob(item.job_id);
+
+    setSelectedJob(item.job_id);
+    setTimeout(() => {
+      setSelectedJob(null);
+    }, 1000);
+  };
+
 
   return (
     <View style={styles.container}>
 
       <View style ={styles.header}>
-        <Text style={styles.headerTitle}>Popular jobs</Text>
+        <Text style={styles.headerTitle}>Suositut työt</Text>
 
-        <Pressable>
-          <Text style={styles.headerBtn}>Show all</Text>
+        <Pressable               
+        onPress={()=>{router.push(`/search/${'Finland'}`)}}>
+        <Text style={styles.headerBtn}
+        >Näytä kaikki</Text>
         </Pressable>
-
       </View>
 
       <View style={styles.cardsContainer}>
         {isLoading ? (
           <ActivityIndicator size="large" color={COLORS.primary} />
         ): error ? (
-          <Text>Something went wrong</Text>
+          <Text>Jotain meni pieleen</Text>
         ): (
           <FlatList
 
@@ -43,6 +61,8 @@ const Popularjobs = () => {
 
               <PopularJobCard
                 item={item}
+                selectedJob={selectedJob}
+                handleCardPress={handleCardPress}
               />
 
             )}
