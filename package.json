@@ -1,5 +1,5 @@
 {
-  "name": "react_native_jobs",
+  "name": "jonnen_jobit",
   "version": "1.0.0",
   "main": "expo-router/entry",
   "scripts": {
@@ -25,6 +25,7 @@
     "react-native-screens": "~3.29.0",
     "react-native-web": "~0.19.6",
     "react-navigation": "^5.0.0",
+    "test": "^3.3.0",
     "update": "^0.7.4"
   },
   "devDependencies": {
