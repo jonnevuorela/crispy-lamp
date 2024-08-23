@@ -52,7 +52,6 @@ jobs:
     - name: 📦 Install dependencies
       run: yarn
 
-    - name: 📋 Test project
 
     - name: 👷 Build app
       run: |
