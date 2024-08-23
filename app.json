@@ -7,7 +7,6 @@
     "plugins": [
       "expo-router"
     ],
-<<<<<<< HEAD
     "name": "react_native_jobs",
     "slug": "react_native_jobs",
     "extra": {
@@ -20,8 +19,7 @@
     },
     "ios": {
       "bundleIdentifier": "jabs"
-    }
-=======
+    },
     "name": "jabs",
     "slug": "jabs",
     "extra": {
@@ -39,6 +37,5 @@
     },
     "android": {},
     "ios": {}
->>>>>>> e5c36da87a21c77af28e0b725aa20e1f854f8bf0
   }
 }
