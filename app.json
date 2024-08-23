@@ -18,7 +18,7 @@
       }
     },
     "ios": {
-      "bundleIdentifier": "jabs"
+      "bundleIdentifier": "com.jonnev.jabs"
     },
     "name": "jabs",
     "slug": "jabs",
@@ -29,13 +29,14 @@
       }
     },
     "owner": "jonnev",
-    "runtimeVersion": {
+       "runtimeVersion": {
       "policy": "appVersion"
     },
     "updates": {
       "url": "https://u.expo.dev/eb71561b-7442-4d6a-8ea4-11e6bb2dd9bf"
     },
-    "android": {},
-    "ios": {}
+    "android": {
+      "package": "com.jonnev.jabs"
+    },
   }
 }
