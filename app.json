@@ -7,8 +7,8 @@
     "plugins": [
       "expo-router"
     ],
-    "name": "jabs_by_jonne",
-    "slug": "jabs_by_jonne",
+    "name": "jabs",
+    "slug": "jabs",
     "extra": {
       "router": {
         "origin": false
@@ -18,10 +18,10 @@
       }
     },
     "ios": {
-      "bundleIdentifier": "jabs.by.jonne"
+      "bundleIdentifier": "jabs"
     },
-    "name": "jabs_by_jonne",
-    "slug": "jabs_by_jonne",
+    "name": "jabs",
+    "slug": "jabs",
     "extra": {
       "eas": {
         "projectId": "eb71561b-7442-4d6a-8ea4-11e6bb2dd9bf",
