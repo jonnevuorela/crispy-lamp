@@ -7,8 +7,8 @@
     "plugins": [
       "expo-router"
     ],
-    "name": "react_native_jobs",
-    "slug": "react_native_jobs",
+    "name": "jabs_by_jonne",
+    "slug": "jabs_by_jonne",
     "extra": {
       "router": {
         "origin": false
@@ -18,10 +18,10 @@
       }
     },
     "ios": {
-      "bundleIdentifier": "jabs_by_jonne"
+      "bundleIdentifier": "jabs.by.jonne"
     },
-    "name": "jabs",
-    "slug": "jabs",
+    "name": "jabs_by_jonne",
+    "slug": "jabs_by_jonne",
     "extra": {
       "eas": {
         "projectId": "eb71561b-7442-4d6a-8ea4-11e6bb2dd9bf",
